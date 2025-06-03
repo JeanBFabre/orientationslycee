@@ -1,0 +1,8 @@
+<h1>Accueil</h1>
+<ul>
+  {% for class in classes %}
+  <li><a href="{% url 'class_detail' class.id %}">{{ class }}</a></li>
+  {% empty %}
+  <li>Aucune classe assignée.</li>
+  {% endfor %}
+</ul>
