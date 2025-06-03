@@ -1,0 +1,8 @@
+<h1>{{ class }}</h1>
+<ul>
+  {% for student in students %}
+  <li><a href="{% url 'student_detail' student.id %}">{{ student }}</a></li>
+  {% empty %}
+  <li>Aucun élève.</li>
+  {% endfor %}
+</ul>
