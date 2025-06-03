@@ -1,0 +1,18 @@
+<h1>{{ student }}</h1>
+<p>Classe: {{ student.school_class }}</p>
+<h2>Orientations</h2>
+<ul>
+  {% for record in student.orientations.all %}
+  <li>T{{ record.trimester }} {{ record.get_year_display }} - {{ record.orientation_type }}: {{ record.content }}</li>
+  {% empty %}
+  <li>Aucune orientation.</li>
+  {% endfor %}
+</ul>
+<h2>Notes</h2>
+<ul>
+  {% for note in student.notes.all %}
+  <li>{{ note.created_at }} - {{ note.author }}: {{ note.text }}</li>
+  {% empty %}
+  <li>Aucune note.</li>
+  {% endfor %}
+</ul>
